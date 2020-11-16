@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31DF5F3A-BAD5-4A51-9449-7F9C1E97D77E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Simulador_Servidor.My.MyApplication</StartupObject>
+    <RootNamespace>Simulador_Servidor</RootNamespace>
+    <AssemblyName>Simulador Servidor</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Simulador Servidor.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Simulador Servidor.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base de Datos.Designer.vb">
+      <DependentUpon>Base de Datos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Base de Datos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClaseServidorSocket.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaJuegosDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaJuegosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListaJuegosDataSet.vb">
+      <DependentUpon>ListaJuegosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Base de Datos.resx">
+      <DependentUpon>Base de Datos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ListaJuegosDataSet.xsc">
+      <DependentUpon>ListaJuegosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ListaJuegosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListaJuegosDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ListaJuegosDataSet.xss">
+      <DependentUpon>ListaJuegosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ListaJuegos.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\welcome.gif" />
+    <None Include="Resources\Abriendo-Steam.gif" />
+    <None Include="Resources\Acces.png" />
+    <None Include="Resources\Animacion.gif" />
+    <None Include="Resources\Animacion1.gif" />
+    <None Include="Resources\Anuncio.gif" />
+    <None Include="Resources\blinkSteam.gif" />
+    <None Include="Resources\boton Verde.png" />
+    <None Include="Resources\boton Verde1.png" />
+    <None Include="Resources\boton-Verde2.png" />
+    <None Include="Resources\boton1.png" />
+    <None Include="Resources\boton2.png" />
+    <None Include="Resources\boton3.png" />
+    <None Include="Resources\boton4.png" />
+    <None Include="Resources\boton-Verde3.png" />
+    <None Include="Resources\boton-Verde21.png" />
+    <None Include="Resources\Captura.PNG" />
+    <Content Include="Resources\cargado.gif" />
+    <None Include="Resources\cargarSteam.bmp" />
+    <None Include="Resources\dreadeye2.gif" />
+    <None Include="Resources\ethernet.gif" />
+    <None Include="Resources\ethernet-1294340__340.gif" />
+    <None Include="Resources\g6bTcbcM.jpg" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\Image3.bmp" />
+    <None Include="Resources\Juego.wav" />
+    <Content Include="Resources\ListaJuegos.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\loading-15.gif" />
+    <None Include="Resources\loading-23.gif" />
+    <Content Include="Resources\loading-39.gif" />
+    <Content Include="Resources\loading-48.gif" />
+    <None Include="Resources\loading-7.gif" />
+    <Content Include="Resources\loading-75.gif" />
+    <None Include="Resources\LogoSteam.png" />
+    <None Include="Resources\pC.png" />
+    <Content Include="Resources\PC2.ico" />
+    <None Include="Resources\PC2.png" />
+    <None Include="Resources\router1.png" />
+    <None Include="Resources\router2.png" />
+    <None Include="Resources\router3.png" />
+    <None Include="Resources\router4.png" />
+    <None Include="Resources\router5.png" />
+    <None Include="Resources\routerEncendido.gif" />
+    <None Include="Resources\server-images-84689.jpg" />
+    <Content Include="Resources\steam-1920x1200.jpg" />
+    <None Include="Resources\steam.png" />
+    <None Include="Resources\steamFondo.jpg" />
+    <Content Include="Resources\steamFondo1.jpg" />
+    <None Include="Resources\ultimate booster.gif" />
+    <None Include="Resources\vr_746x419.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
